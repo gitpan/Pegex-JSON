@@ -19,11 +19,11 @@ no_index:
     - inc
     - t
 requires:
-  Pegex: 0.16
+  Pegex: 0.18
   boolean: 0.28
   perl: 5.10.0
 resources:
   homepage: http://github.com/ingydotnet/pegex-json-pm/tree
   license: http://dev.perl.org/licenses/
   repository: git://github.com/ingydotnet/pegex-json-pm.git
-version: 0.10
+version: 0.11
