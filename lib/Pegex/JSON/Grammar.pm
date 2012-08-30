@@ -3,17 +3,19 @@
 # abstract:  Pegex Grammar for JSON
 # author:    Ingy döt Net <ingy@cpan.org>
 # license:   perl
-# copyright: 2011
+# copyright: 2011, 2012
 
 package Pegex::JSON::Grammar;
 use Pegex::Mo;
 extends 'Pegex::Grammar';
 
-use constant text => '../json-pgx/json.pgx';
+use constant file => '../json-pgx/json.pgx';
 
-sub tree {
+sub make_tree {
   {
-    '+top' => 'json',
+    '+grammar' => 'json',
+    '+toprule' => 'json',
+    '+version' => '0.0.1',
     'boolean' => {
       '.any' => [
         {
@@ -71,7 +73,7 @@ sub tree {
       '.rgx' => qr/(?-xism:\Gnull)/
     },
     'number' => {
-      '.rgx' => qr/(?-xism:\G(\-?[0-9]+(?:\.[0-9]*)?|\.[0-9]+))/
+      '.rgx' => qr/(?-xism:\G(\-?(?:0|[1-9][0-9]*)(?:\.[0-9]*)?(?:[eE][\-\+]?[0-9]+)?))/
     },
     'pair' => {
       '.all' => [
