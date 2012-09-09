@@ -37,5 +37,6 @@ MANIFEST			This list of files
 META.yml
 README
 t/common.yaml
+t/scalar.t
 t/test.t
 t/use_ok.t
