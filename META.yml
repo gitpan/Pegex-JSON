@@ -20,7 +20,7 @@ no_index:
     - inc
     - t
 requires:
-  Pegex: 0.20
+  Pegex: 0.21
   boolean: 0.28
   perl: 5.10.0
 resources:
@@ -30,4 +30,4 @@ resources:
     type: git
     url: git://github.com/ingydotnet/pegex-json-pm.git
     web: https://github.com/ingydotnet/pegex-json-pm/tree
-version: 0.15
+version: 0.16

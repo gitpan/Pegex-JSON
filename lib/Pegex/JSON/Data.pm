@@ -6,8 +6,8 @@
 # copyright: 2011, 2012
 
 package Pegex::JSON::Data;
-use Pegex::Mo;
-extends 'Pegex::Receiver';
+use Pegex::Base;
+extends 'Pegex::Tree';
 
 use boolean;
 
