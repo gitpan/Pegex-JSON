@@ -1,12 +1,5 @@
-#line 1
-##
-# name:      Pegex::Grammar
-# abstract:  Pegex Grammar Base Class
-# author:    Ingy döt Net <ingy@cpan.org>
-# license:   perl
-# copyright: 2010, 2011, 2012
-
 package Pegex::Grammar;
+
 use Pegex::Base;
 
 # Grammar can be in text or tree form. Tree will be compiled from text.
@@ -78,6 +71,8 @@ sub compile_into_module {
     $module =~ s!::!/!g;
     $module = "$module.pm";
     my $file = $INC{$module} or return;
+#     require Pegex::Bootstrap;
+#     my $perl = Pegex::Bootstrap->new->compile($grammar_text)->to_perl;
     require Pegex::Compiler;
     my $perl = Pegex::Compiler->new->compile($grammar_text)->to_perl;
     open IN, $file or die $!;
@@ -91,4 +86,3 @@ sub compile_into_module {
 }
 
 1;
-

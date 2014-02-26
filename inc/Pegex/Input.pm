@@ -1,12 +1,5 @@
-#line 1
-##
-# name:      Pegex::Input
-# abstract:  Pegex Parser Input Abstraction
-# author:    Ingy döt Net <ingy@cpan.org>
-# license:   perl
-# copyright: 2011, 2012
-
 package Pegex::Input;
+
 use Pegex::Base;
 
 has string => ();
@@ -51,7 +44,7 @@ sub open {
         $self->{_buffer} = \$self->{string};
     }
     else {
-        die "Pegex::open failed. No source to open";
+        die "Pegex::Input::open failed. No source to open";
     }
     $self->{_is_open} = 1;
     return $self;
@@ -68,16 +61,4 @@ sub close {
     return $self;
 }
 
-sub _guess_input {
-    my ($self, $input) = @_;
-    return ref($input)
-        ? (ref($input) eq 'SCALAR')
-            ? 'stringref'
-            : 'handle'
-        : (length($input) and ($input !~ /\n/) and -f $input)
-            ? 'file'
-            : 'string';
-}
-
 1;
-

@@ -1,12 +1,5 @@
-#line 1
-##
-# name:      Pegex::Tree
-# abstract:  Pegex Parse Tree Receiver
-# author:    Ingy döt Net <ingy@cpan.org>
-# license:   perl
-# copyright: 2012
-
 package Pegex::Tree;
+
 use Pegex::Base;
 extends 'Pegex::Receiver';
 
@@ -25,4 +18,3 @@ sub final {
 }
 
 1;
-
