@@ -1,6 +1,7 @@
 use TestML::Runtime;
 
 package TestML::Compiler;
+
 use TestML::Base;
 
 has code => ();
@@ -108,9 +109,6 @@ sub preprocess {
             $self->{code} = $input;
             $self->{data} = '';
         }
-
-        $self->{code} =~ s/^\\(\\*[\%\#])/$1/gm;
-        $self->{data} =~ s/^\\(\\*[\%\#])/$1/gm;
     }
     else {
         $self->{text} = $input;

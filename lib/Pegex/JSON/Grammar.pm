@@ -1,4 +1,5 @@
 package Pegex::JSON::Grammar;
+$Pegex::JSON::Grammar::VERSION = '0.18';
 use Pegex::Base;
 extends 'Pegex::Grammar';
 
@@ -7,6 +8,7 @@ use constant file => '../json-pgx/json.pgx';
 sub make_tree {
   {
     '+grammar' => 'json',
+    '+include' => 'pegex-atoms',
     '+toprule' => 'json',
     '+version' => '0.0.1',
     'boolean' => {
@@ -38,11 +40,24 @@ sub make_tree {
           '.rgx' => qr/\G\s*\{\s*/
         },
         {
-          '+min' => 0,
-          '.ref' => 'pair',
-          '.sep' => {
-            '.rgx' => qr/\G\s*,\s*/
-          }
+          '+max' => 1,
+          '.all' => [
+            {
+              '.ref' => 'pair'
+            },
+            {
+              '+min' => 0,
+              '-flat' => 1,
+              '.all' => [
+                {
+                  '.rgx' => qr/\G\s*,\s*/
+                },
+                {
+                  '.ref' => 'pair'
+                }
+              ]
+            }
+          ]
         },
         {
           '.rgx' => qr/\G\s*\}\s*/
@@ -103,11 +118,24 @@ sub make_tree {
           '.rgx' => qr/\G\s*\[\s*/
         },
         {
-          '+min' => 0,
-          '.ref' => 'node',
-          '.sep' => {
-            '.rgx' => qr/\G\s*,\s*/
-          }
+          '+max' => 1,
+          '.all' => [
+            {
+              '.ref' => 'node'
+            },
+            {
+              '+min' => 0,
+              '-flat' => 1,
+              '.all' => [
+                {
+                  '.rgx' => qr/\G\s*,\s*/
+                },
+                {
+                  '.ref' => 'node'
+                }
+              ]
+            }
+          ]
         },
         {
           '.rgx' => qr/\G\s*\]\s*/

@@ -8,14 +8,15 @@ DESCRIPTION
     Pegex::JSON is a JSON parser written in Pegex.
 
 SEE ALSO
-    Pegex
-    JSON
+    *   Pegex
+
+    *   JSON
 
 AUTHOR
-    Ingy döt Net (ingy) <ingy@cpan.org>
+    Ingy döt Net <ingy@cpan.org>
 
 COPYRIGHT
-    Copyright (c) 2011-2014 Ingy döt Net
+    Copyright 2011-2014 Ingy döt Net
 
 LICENSE
     This library is free software and may be distributed under the same

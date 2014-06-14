@@ -1,42 +1,30 @@
----
-version: 0.17
-date:    Wed Feb 26 08:37:49 PST 2014
-changes:
-- Make API compatible with JSONY.pm
-- Switch to dzil release
----
-version: 0.16
-date:    Thu Nov  8 10:50:06 PST 2012
-changes:
-- New Pegex::Module API in Pegex-0.21.
----
-version: 0.15
-date:    Sun Sep  9 16:13:29 PDT 2012
-changes:
-- Handle string escaping properly including unicode escapes and surrogate pairs.
----
-version: 0.14
-date:    Thu Aug 30 00:14:27 PDT 2012
-changes:
-- Forgot to update Pegex version # for dependency
----
-version: 0.13
-date:    Thu Aug 30 00:11:00 PDT 2012
-changes:
-- Use new Pegex
----
-version: 0.12
-date:    Sat Nov  5 01:07:33 PDT 2011
-changes:
-- use Pegex::Mo instead of Mo.
----
-version: 0.11
-date:    Fri Sep 30 01:54:50 CEST 2011
-changes:
-- Support negative numbers in grammar.
----
-version: 0.10
-date:    Thu Sep 22 00:09:21 CEST 2011
-changes:
-- First Release
-- Released from Liz++ and Wendy++'s Laundry Room. On the washing machine.
+0.18 Sat Jun 14 13:55:40 PDT 2014
+ - Switch to Zilla::Dist
+
+0.17 Wed Feb 26 08:37:49 PST 2014
+ - Make API compatible with JSONY.pm
+ - Switch to dzil release
+
+0.16 Thu Nov  8 10:50:06 PST 2012
+ - New Pegex::Module API in Pegex-0.21.
+
+0.15 Sun Sep  9 16:13:29 PDT 2012
+ - Handle string escaping properly including unicode escapes and surrogate
+   pairs.
+
+0.14 Thu Aug 30 00:14:27 PDT 2012
+ - Forgot to update Pegex version
+
+0.13 Thu Aug 30 00:11:00 PDT 2012
+ - Use new Pegex
+
+0.12 Sat Nov  5 01:07:33 PDT 2011
+ - use Pegex::Mo instead of Mo.
+
+0.11 Fri Sep 30 01:54:50 CEST 2011
+ - Support negative numbers in grammar.
+
+0.10 Thu Sep 22 00:09:21 CEST 2011
+ - First Release
+ - Released from Liz++ and Wendy++'s Laundry Room. On the washing machine.
+

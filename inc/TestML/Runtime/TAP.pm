@@ -2,6 +2,7 @@ use Test::Builder;
 use TestML::Runtime;
 
 package TestML::Runtime::TAP;
+
 use TestML::Base;
 extends 'TestML::Runtime';
 
@@ -59,9 +60,27 @@ sub plan_end {
 # TODO Use Test::Diff here.
 sub assert_EQ {
     my ($self, $got, $want) = @_;
+    $got = $got->str->value;
+    $want = $want->str->value;
+    if ($got ne $want and $want =~ /\n/) {
+        my $block = $self->function->getvar('Block');
+        my $diff = $self->function->getvar('Diff');
+        if ($diff or exists $block->points->{DIFF}) {
+            require Text::Diff;
+            $self->tap_object->ok(0, $self->get_label);
+            my $diff = Text::Diff::diff(
+                \$want, \$got, {
+                    FILENAME_A => "want",
+                    FILENAME_B => "got",
+                },
+            );
+            $self->tap_object->diag($diff);
+            return;
+        }
+    }
     $self->tap_object->is_eq(
-        $got->str->value,
-        $want->str->value,
+        $got,
+        $want,
         $self->get_label,
     );
 }

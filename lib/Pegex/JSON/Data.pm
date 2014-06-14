@@ -1,4 +1,5 @@
 package Pegex::JSON::Data;
+$Pegex::JSON::Data::VERSION = '0.18';
 use Pegex::Base;
 extends 'Pegex::Tree';
 

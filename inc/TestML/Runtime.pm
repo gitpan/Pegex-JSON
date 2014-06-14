@@ -1,4 +1,5 @@
 package TestML::Runtime;
+
 use TestML::Base;
 
 has testml => ();
@@ -189,6 +190,7 @@ sub get_point {
     if ($value =~ s/\n+\z/\n/ and $value eq "\n") {
         $value = '';
     }
+    $value =~ s/^\\//gm;
     return TestML::Str->new(value => $value);
 }
 
@@ -285,6 +287,7 @@ sub read_testml_file {
 
 #-----------------------------------------------------------------------------
 package TestML::Function;
+
 use TestML::Base;
 
 has type => 'Func';     # Functions are TestML typed objects
@@ -319,6 +322,7 @@ sub forgetvar {
 
 #-----------------------------------------------------------------------------
 package TestML::Assignment;
+
 use TestML::Base;
 
 has name => ();
@@ -326,6 +330,7 @@ has expr => ();
 
 #-----------------------------------------------------------------------------
 package TestML::Statement;
+
 use TestML::Base;
 
 has expr => ();
@@ -334,12 +339,14 @@ has points => ();
 
 #-----------------------------------------------------------------------------
 package TestML::Expression;
+
 use TestML::Base;
 
 has calls => [];
 
 #-----------------------------------------------------------------------------
 package TestML::Assertion;
+
 use TestML::Base;
 
 has name => ();
@@ -347,6 +354,7 @@ has expr => ();
 
 #-----------------------------------------------------------------------------
 package TestML::Call;
+
 use TestML::Base;
 
 has name => ();
@@ -354,11 +362,13 @@ has args => ();
 
 #-----------------------------------------------------------------------------
 package TestML::Callable;
+
 use TestML::Base;
 has value => ();
 
 #-----------------------------------------------------------------------------
 package TestML::Block;
+
 use TestML::Base;
 
 has label => '';
@@ -366,12 +376,14 @@ has points => {};
 
 #-----------------------------------------------------------------------------
 package TestML::Point;
+
 use TestML::Base;
 
 has name => ();
 
 #-----------------------------------------------------------------------------
 package TestML::Object;
+
 use TestML::Base;
 
 has value => ();
@@ -390,6 +402,7 @@ sub none { $TestML::Constant::None }
 
 #-----------------------------------------------------------------------------
 package TestML::Str;
+
 use TestML::Base;
 extends 'TestML::Object';
 
@@ -404,6 +417,7 @@ sub list { TestML::List->new(value => [split //, $_[0]->value]) }
 
 #-----------------------------------------------------------------------------
 package TestML::Num;
+
 use TestML::Base;
 extends 'TestML::Object';
 
@@ -418,6 +432,7 @@ sub list {
 
 #-----------------------------------------------------------------------------
 package TestML::Bool;
+
 use TestML::Base;
 extends 'TestML::Object';
 
@@ -427,6 +442,7 @@ sub bool { $_[0] }
 
 #-----------------------------------------------------------------------------
 package TestML::List;
+
 use TestML::Base;
 extends 'TestML::Object';
 has value => [];
@@ -438,6 +454,7 @@ sub push {
 
 #-----------------------------------------------------------------------------
 package TestML::None;
+
 use TestML::Base;
 extends 'TestML::Object';
 
@@ -448,11 +465,13 @@ sub list { TestML::List->new(value => []) }
 
 #-----------------------------------------------------------------------------
 package TestML::Native;
+
 use TestML::Base;
 extends 'TestML::Object';
 
 #-----------------------------------------------------------------------------
 package TestML::Error;
+
 use TestML::Base;
 extends 'TestML::Object';
 
