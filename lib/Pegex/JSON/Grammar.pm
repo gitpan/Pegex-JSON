@@ -1,5 +1,4 @@
 package Pegex::JSON::Grammar;
-$Pegex::JSON::Grammar::VERSION = '0.18';
 use Pegex::Base;
 extends 'Pegex::Grammar';
 

@@ -1,3 +1,6 @@
+0.19 Mon Jun 16 15:50:38 PDT 2014
+ - Switch to manual versioning and fix travis
+
 0.18 Sat Jun 14 13:55:40 PDT 2014
  - Switch to Zilla::Dist
 
