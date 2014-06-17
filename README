@@ -1,5 +1,5 @@
 NAME
-    Pegex::JSONY - Pegex Loader for JSON
+    Pegex::JSON - Pegex Loader for JSON
 
 SYNOPSIS
         my $data = Pegex::JSON->new->load($json);
