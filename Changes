@@ -1,3 +1,6 @@
+0.23 Fri Aug 15 20:22:31 PDT 2014
+ - Add t/000-compile-modules.t
+
 0.22 Sat Aug  2 16:16:55 PDT 2014
  - Fix Copyright years.
 
