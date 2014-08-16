@@ -34,6 +34,7 @@ lib/Pegex/JSON.pm
 lib/Pegex/JSON.pod
 lib/Pegex/JSON/Data.pm
 lib/Pegex/JSON/Grammar.pm
+t/000-compile-modules.t
 t/release-pod-syntax.t
 t/scalar.t
 t/test.t
