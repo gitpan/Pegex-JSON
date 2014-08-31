@@ -1,3 +1,7 @@
+0.27 Sat Aug 30 23:32:26 MDT 2014
+ - Add tests for top level scalars
+ - Found a serious bug with it and fix
+
 0.26 Sat Aug 30 21:29:04 PDT 2014
  - Fix issue/2 and support RFC 7159
  - Top level values can be any JSON value
